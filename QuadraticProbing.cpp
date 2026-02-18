@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 using namespace std;
 
 #define SIZE 10
@@ -9,14 +8,10 @@ struct Node {
     Node* next; 
 };
 
-Node* hashTable[SIZE] = {NULL};
-
-int hashFunction(int key) {
-    return key % SIZE;
-}
+Node* hashTable[SIZE];
 
 void insert(int key) {
-    int index = hashFunction(key);
+    int index = key % SIZE;
     int i = 0;
 
     while (i < SIZE && hashTable[(index + i * i) % SIZE] != NULL) {
@@ -38,7 +33,7 @@ void insert(int key) {
 }
 
 void search(int key) {
-    int index = hashFunction(key);
+    int index = key % SIZE;
     int i = 0;
 
     while (i < SIZE && hashTable[(index + i * i) % SIZE] != NULL) {
@@ -100,4 +95,5 @@ int main() {
     }
 
     return 0;
+
 }
