@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define size 11
+#define size 11 //Prime number size table is good. 
 
 struct Node
 {
@@ -118,4 +118,5 @@ int main ()
    }
  return 0;
 }
+
 
