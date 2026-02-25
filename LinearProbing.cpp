@@ -1,96 +1,103 @@
 #include <iostream>
 using namespace std;
 
-#define SIZE 10
+#define size 10
 
-struct Node {
+struct Node
+{
     int key;
-    Node* next; 
+    Node *next;
 };
 
-Node* hashTable[SIZE];
+Node* hashTable[size];
 
-void insert(int key) {
-    int index = key % SIZE;
+void insertData (int data)
+{
+    int index = data % size;
     int start = index;
 
-    while (hashTable[index] != NULL) {
-        index = (index + 1) % SIZE;
-        if (index == start) {
-            cout << "Hash Table Overflow" << endl;
-            return;
-        }
-    }
+     while (hashTable[index] != NULL)
+      {
+         index = (index + 1) % size;
+           if (index == start)
+            {
+                cout << "Hashtable Overflow." << endl;
+                return;
+            }
+      }
 
-    Node* temp = (Node*)malloc(sizeof(Node));
-    temp->key = key;
-    temp->next = NULL; 
-    hashTable[index] = temp;
+      Node* temp = (Node*) malloc (sizeof(Node));
+      temp->key = data;
+      temp->next = NULL;
+      hashTable[index] = temp;
+      
+      cout << data << "  Insert at index number. -> " << index << endl;
+      return;
 
-    cout << key << " inserted at index " << index << endl;
-}
+ }
 
-void search(int key) {
-    int index = key % SIZE;
-    int start = index;
+ void search (int data)
+  {
+     int index = data % size;
+     int start = index;
 
-    while (hashTable[index] != NULL) {
-        if (hashTable[index]->key == key) {
-            cout << key << " found at index " << index << endl;
-            return;
-        }
-        index = (index + 1) % SIZE;
-        if (index == start) break;
-    }
+      while (hashTable[index] != NULL)
+       {
+         if (hashTable[index]->key == data)
+          {
+             cout << data << "  Founded at index. ->" << index << endl;
+             return;
+          }
+          index = (index + 1) % size;
+          if (start == index) break;
+       }
 
-    cout << key << " not found in hash table" << endl;
-}
+       cout << "Value not Founded." << endl;
+  }
 
-void display() {
-    for (int i = 0; i < SIZE; i++) {
-        if (hashTable[i] != NULL)
-            cout << i << " -> " << hashTable[i]->key << endl;
-        else
-            cout << i << " -> " << "-1" << endl;
-    }
-}
+  void display () 
+   {
+      for (int i = 0; i < size; i++) 
+      {
+         if (hashTable[i] != NULL) 
+          {
+            cout << i << "->" << hashTable[i]->key << endl;
+          }
+         else if (hashTable[i] == NULL) 
+          {
+            cout << i << "->" << "-1" << endl;
+          }
+      }
+   }
 
-int main() {
-    int choice, key;
+int main ()
+ {
+     int number, value;
 
-    while (true) {
-        cout << "1.Insert." << endl;
-        cout << "2.Search." << endl;
-        cout << "3.Display-ALL." << endl;
-        cout << "4.Exit." << endl;
+      while (true)
+       {
+         cout << "1.Insert value." << endl;
+         cout << "2.Search value." << endl;
+         cout << "3.Display complete table." << endl; 
 
-        cin >> choice;
+         cin >> number;
 
-        if (choice == 1) {
-            cout << "Enter key to insert: ";
-            cin >> key;
-            insert(key);
-        }
-        else if (choice == 2) {
-            cout << "Enter key to search: ";
-            cin >> key;
-            search(key);
-        }
-        else if (choice == 3) {
+         if (number == 1)
+         {
+            cout << "Insert value.";
+            cin >> value; 
+             insertData(value);
+         }
+         else if (number == 2)
+          {
+             cout << "search value.";
+              cin >> value;
+              search(value);
+          }
+          else if (number == 3) 
+          {
             display();
-        }
-        else if (choice == 4) {
-            cout << "Exiting program." << endl;
-            break;
-        }
-        else {
-            cout << "Invalid choice!" << endl;
-        }
-    }
-    for (int i = 0; i < SIZE; i++) {
-        if (hashTable[i] != NULL) free(hashTable[i]);
-    }
-
-    return 0;
-
-}
+          }
+       }
+     return 0;
+ }
