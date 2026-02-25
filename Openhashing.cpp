@@ -46,7 +46,7 @@ void searchData (int value)
 
     if (hashtable[index].data == -1)
     {
-        cout << "Hashtable not having the particular value." << endl;
+        cout << "The hashtable is missing the value." << endl;
         return;
     }
 
@@ -116,5 +116,6 @@ int main() {
         }
     }
 }
+
 
 
