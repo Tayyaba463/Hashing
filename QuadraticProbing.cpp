@@ -84,9 +84,9 @@ int main ()
 
    while (true) {
  
-      cout << "1. Insert Value. " << endl;
-      cout << "2. Search Value. " << endl;
-      cout << "3. Display All Values. " << endl;
+      cout << "1. Insert. " << endl;
+      cout << "2. Search. " << endl;
+      cout << "3. Display. " << endl;
       cout << "4.Exit." << endl;
 
       cin >> num;
@@ -114,7 +114,7 @@ int main ()
          cout << "Exited Successfully." << endl;
       }
 
-      cout << "Enter Wrong Choice." << endl;
+      cout << "Enter Correct Choice." << endl;
    }
  return 0;
 }
