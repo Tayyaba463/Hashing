@@ -76,9 +76,10 @@ int main ()
 
       while (true)
        {
-         cout << "1.Insert value." << endl;
-         cout << "2.Search value." << endl;
-         cout << "3.Display complete table." << endl; 
+         cout << "1.Insert." << endl;
+         cout << "2.Search." << endl;
+         cout << "3.Display." << endl; 
+         cout << "4.Exit." << endl;
 
          cin >> number;
 
@@ -97,6 +98,10 @@ int main ()
           else if (number == 3) 
           {
             display();
+          }
+         else if (number == 4) 
+          {
+            cout << " Exited Successfully." << endl;
           }
        }
      return 0;
