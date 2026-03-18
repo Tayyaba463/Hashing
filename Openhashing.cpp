@@ -87,10 +87,10 @@ int main() {
 
     while (true) {
 
-        cout << "1. Insert value" << endl;
-        cout << "2. Display Data" << endl;
-        cout << "3. search data." << endl;
-        cout << "4. Exit" << endl;
+        cout << "1. Insert." << endl;
+        cout << "2. Display." << endl;
+        cout << "3. Search." << endl;
+        cout << "4. Exit." << endl;
 
         cin >> num;
 
@@ -108,13 +108,13 @@ int main() {
          searchData(value);
         }
         else if (num == 4) {
-            cout << "You have successfully exited." << endl;
-            break;  
+            cout << "You have successfully exited." << endl;
         }
         else {
             cout << "Invalid Option" << endl;
         }
     }
+   return 0;
 }
 
 
