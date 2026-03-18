@@ -111,7 +111,7 @@ int main() {
             cout << "You have successfully exited." << endl;
         }
         else {
-            cout << "Invalid Option" << endl;
+            cout << "Enter Correct Choice." << endl;
         }
     }
    return 0;
